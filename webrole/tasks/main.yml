@@ -1,0 +1,17 @@
+---
+# tasks file for webrole
+
+- name: "install apache webserver"
+  package:
+    name: "httpd"
+    state: present
+
+- name: "copy web pages"
+  copy:
+    content: "Hello"
+    dest: "/var/www/html/index.html"
+
+- name: "start service"
+  service:
+    name: "httpd"
+    state: started
