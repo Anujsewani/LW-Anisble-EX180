@@ -43,6 +43,6 @@ Step 12: Now go to aws to copy the public ip address of load balancer instance a
 
 Step 13: Open web browser and paste the ip address of load balancer instance with 5000 as by default port number of HAProxy.
 
-![Project Image](images/Screenshot from 2024-01-20 17-27-43.png)
+![Project Image](images/Screenshot%20from%202024-01-20%2017-27-43.png)
 
-![Project Image](images/Screenshot from 2024-01-20 17-27-55.png)
+![Project Image](images/Screenshot%20from%202024-01-20%2017-27-55.png)
