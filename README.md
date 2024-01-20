@@ -42,3 +42,7 @@ This command wil run the playbook
 Step 12: Now go to aws to copy the public ip address of load balancer instance and edit the security group to allow port 80 & 5000 to connect from anywhere. 
 
 Step 13: Open web browser and paste the ip address of load balancer instance with 5000 as by default port number of HAProxy.
+
+![Project Image](images/Screenshot from 2024-01-20 17-27-43.png)
+
+![Project Image](images/Screenshot from 2024-01-20 17-27-55.png)
