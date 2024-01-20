@@ -26,7 +26,7 @@ frontend main
 backend app
     balance     roundrobin
     {% for ip in groups['webservers'] %}
-    server app{{ ansible_facts['ansible_all_ipv4_addresses'] }} {{ip}}:80 check
+    server app{{ ip }} {{ip}}:80 check
     {% endfor %}
     
 
