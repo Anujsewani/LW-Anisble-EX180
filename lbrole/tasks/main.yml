@@ -1,2 +1,22 @@
 ---
 # tasks file for lbrole
+- name: "create syslink for python symlink /usr/bin/python -> /usr/bin/python3"
+  raw: |
+    if [ -f /usr/bin/python3 ] && [ ! -f /usr/bin/python ]; then
+      ln --symbolic /usr/bin/python3 /usr/bin/python;
+    fi
+
+- name: "Install haproxy"
+  dnf:
+    name: "haproxy"
+    state: present
+
+- name: "configure haproxy"
+  template:
+    src: "haproxy.cfg.j2"
+    dest: "/etc/haproxy/haproxy.cfg"
+  notify: "haproxy restart"
+- name: "Start haproxy service"
+  service:
+    name: "haproxy"
+    state: started

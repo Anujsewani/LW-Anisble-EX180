@@ -3,7 +3,7 @@
   roles:
   - role: webrole
 
-    #- hosts: LB
-    #become: true
-    #roles:
-    #- role: lbrole
+- hosts: LB
+  become: true
+  roles:
+  - role: lbrole

@@ -1,14 +1,18 @@
 ---
 # tasks file for webrole
-
+- name: "create syslink for python symlink /usr/bin/python -> /usr/bin/python3"
+  raw: |
+    if [ -f /usr/bin/python3 ] && [ ! -f /usr/bin/python ]; then
+      ln --symbolic /usr/bin/python3 /usr/bin/python;
+    fi
 - name: "install apache webserver"
-  package:
+  dnf:
     name: "httpd"
     state: present
 
 - name: "copy web pages"
   copy:
-    content: "Hello"
+    content: "Hello {{ ansible_nodename }} "
     dest: "/var/www/html/index.html"
 
 - name: "start service"
